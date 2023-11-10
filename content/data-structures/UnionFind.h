@@ -8,17 +8,19 @@
  */
 #pragma once
 
-struct UF {
-	vi e;
-	UF(int n) : e(n, -1) {}
-	bool sameSet(int a, int b) { return find(a) == find(b); }
-	int size(int x) { return -e[find(x)]; }
-	int find(int x) { return e[x] < 0 ? x : e[x] = find(e[x]); }
-	bool join(int a, int b) {
-		a = find(a), b = find(b);
-		if (a == b) return false;
-		if (e[a] > e[b]) swap(a, b);
-		e[a] += e[b]; e[b] = a;
-		return true;
-	}
+struct DSU{
+    vector<int> P,S;
+    DSU(int n){
+        P.resize(n+1);S.resize(n+1,1);
+        rep(i,1,n+1)P[i]=i;
+    }int find(int u){
+        if(u==P[u])return u;
+        return P[u]=find(P[u]);
+    }void merge(int u,int v){
+        u=find(u);v=find(v);
+        if(S[u]>S[v])swap(u,v);
+        P[u]=v;
+        S[v]+=S[u];
+    }
 };
+
