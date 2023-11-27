@@ -7,6 +7,7 @@
  * so that an expression of the type $(a||b)\&\&(!a||c)\&\&(d||!b)\&\&...$
  * becomes true, or reports that it is unsatisfiable.
  * Negated variables are represented by bit-inversions (\texttt{\tilde{}x}).
+ * 0-indexed
  * Usage:
  *  TwoSat ts(number of boolean variables);
  *  ts.either(0, \tilde3); // Var 0 is true or var 3 is false
