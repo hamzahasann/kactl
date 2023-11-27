@@ -21,7 +21,7 @@
 
 vi num, st;
 vector<vector<pii>> ed;
-int Time;
+int Time=0;
 template<class F>
 int dfs(int at, int par, F& f) {
 	int me = num[at] = ++Time, top = me;
