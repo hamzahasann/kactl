@@ -16,11 +16,13 @@ struct DSU{
     }int find(int u){
         if(u==P[u])return u;
         return P[u]=find(P[u]);
-    }void merge(int u,int v){
+    }int merge(int u,int v){
         u=find(u);v=find(v);
+        if(u==v)return 0;
         if(S[u]>S[v])swap(u,v);
         P[u]=v;
         S[v]+=S[u];
+        return 1;
     }
 };
 
