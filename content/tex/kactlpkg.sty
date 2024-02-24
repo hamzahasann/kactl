@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}             % Encoding UTF-8
 \usepackage{listings}                   % Source code listings
 \usepackage{framed}                     % Source code listings
-\usepackage[a4paper,landscape,hmargin={0.5cm,0.5cm},vmargin={1.0cm,0.4cm}]{geometry}
+\usepackage[a4paper,portrait,hmargin={2.5cm,2.5cm},vmargin={2.5cm,2.5cm}]{geometry}
 \usepackage{multicol}                   % Split page in multiple columns
 \usepackage{fancyhdr}                   % Fancy headers
 \usepackage{amsbsy, amssymb, amsmath}   % Enable math symbols
@@ -199,7 +199,9 @@
 \lstset{tabsize=2}
 \lstset{showstringspaces=false}
 \lstset{breaklines=true}
-\lstset{basicstyle=\footnotesize\ttfamily}
+\lstset{
+    basicstyle=\fontsize{12pt}{12pt}\ttfamily, % Sets font size to 12pt with a line spacing of 14pt
+}
 \lstset{commentstyle=\normalfont\itshape}
 \lstset{literate={^}{\caret}{1} {~}{\tilde}{1} {\{}{\nicelbrace}{1} {\}}{\nicerbrace}{1}}
 \lstset{emptylines=*1}
@@ -344,7 +346,7 @@
 
 
 \newcommand{\codeheader}[2]{
-	{\par\noindent\footnotesize{\textbf{#1:} #2\par}}
+    \par\noindent\fontsize{12pt}{14pt}\selectfont{\textbf{#1:} #2\par}%
 }
 
 \long\def\@makecaption#1#2{

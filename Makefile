@@ -8,6 +8,7 @@ help:
 	@echo "Available commands are:"
 	@echo "	make fast		- to build KACTL, quickly (only runs LaTeX once)"
 	@echo "	make kactl		- to build KACTL"
+	@echo " make kactl-topi	- to build KACTL for topi"
 	@echo "	make clean		- to clean up the build process"
 	@echo "	make veryclean		- to clean up and remove kactl.pdf"
 	@echo "	make test		- to run all the stress tests in stress-tests/"
@@ -25,6 +26,9 @@ kactl: test-session.pdf | build
 	$(LATEXCMD) content/kactl.tex && $(LATEXCMD) content/kactl.tex
 	cp build/kactl.pdf kactl.pdf
 
+kactl-topi: test-session.pdf | build
+	$(LATEXCMD) content/kactl-topi.tex && $(LATEXCMD) content/kactl-topi.tex
+	cp build/kactl-topi.pdf kactl-topi.pdf
 clean:
 	cd build && rm -f kactl.aux kactl.log kactl.tmp kactl.toc kactl.pdf kactl.ptc
 
