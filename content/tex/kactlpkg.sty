@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}             % Encoding UTF-8
 \usepackage{listings}                   % Source code listings
 \usepackage{framed}                     % Source code listings
-\usepackage[a4paper,portrait,hmargin={1.5cm,1.5cm},vmargin={1.5cm,1.5cm}]{geometry}
+\usepackage[a4paper,portrait,hmargin={1.0cm,1.0cm},vmargin={1.0cm,1.0cm}]{geometry}
 \usepackage{multicol}                   % Split page in multiple columns
 \usepackage{fancyhdr}                   % Fancy headers
 \usepackage{amsbsy, amssymb, amsmath}   % Enable math symbols
@@ -57,9 +57,9 @@
 
 \renewcommand{\maketitle}[2]{
 	\begin{center}
-		{\Huge \@title}\\
-		{\huge \@subtitle{} version #2}\\[0.1cm]
-		{\Huge \textsc{#1}}
+		{\large \@title}\\
+		{\large \@subtitle{} version #2}\\[0.1cm]
+		{\large \textsc{#1}}
 	\end{center}
 }
 
@@ -122,9 +122,9 @@
 
 	\parindent \z@ \raggedright \normalfont
 		\interlinepenalty\@M
-	{\underline{\huge \bfseries #1} }
+	{\underline{\large \bfseries #1} }
 	\ifnum \c@secnumdepth >\m@ne
-		{\huge\bfseries (\thechapter) \par\nobreak }
+		{\large\bfseries (\thechapter) \par\nobreak }
 	\fi
 	\startcontents[chapters]
 }
@@ -132,7 +132,7 @@
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                    {-0.5ex \@plus -1ex \@minus -.2ex}%
                                    {.4ex}%
-                                   {\normalfont\LARGE\bfseries}}
+                                   {\normalfont\large\bfseries}}
 
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}
 	{1ex\@plus -1ex \@minus -.3ex}
