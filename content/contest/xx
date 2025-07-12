@@ -1,0 +1,5 @@
+#!/bin/bash
+
+file="${1%.cpp}"
+
+g++ -std=c++17 -O2 -Wall -Wextra "$file.cpp" -o "$file.o" && ./"$file.o"
